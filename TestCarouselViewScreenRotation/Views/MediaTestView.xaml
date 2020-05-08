@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:SizeAllocatedView
+    xmlns:views="clr-namespace:TestCarouselViewScreenRotation.Views"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="TestCarouselViewScreenRotation.Views.MediaTestView"             
+    BackgroundColor="{Binding Color}"
+    >
+    <ContentView.Content>
+        <Grid>
+            <MediaElement 
+                    x:Name="mediaElement"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand" 
+                   Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4"
+                   ShowsPlaybackControls="False" 
+                   AutoPlay="True"
+                   BackgroundColor="Black"
+                
+                   />
+            <StackLayout BindingContext="{x:Reference mediaElement}" 
+                         HorizontalOptions="Center" 
+                         VerticalOptions="End"
+                         Orientation="Horizontal"
+                         Margin="0,0,0,72"
+                         >
+                <Button Text="&#x25B6;&#xFE0F; Play"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="OnPlayPauseButtonClicked">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                 Binding="{Binding CurrentState}"
+                                 Value="{x:Static MediaElementState.Playing}">
+                            <Setter Property="Text"
+                                Value="&#x23F8; Pause" />
+                        </DataTrigger>
+                        <DataTrigger TargetType="Button"
+                                 Binding="{Binding CurrentState}"
+                                 Value="{x:Static MediaElementState.Buffering}">
+                            <Setter Property="IsEnabled"
+                                Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+                <Button Text="&#x23F9; Stop"
+                    HorizontalOptions="CenterAndExpand"
+                    Clicked="OnStopButtonClicked">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                 Binding="{Binding CurrentState}"
+                                 Value="{x:Static MediaElementState.Stopped}">
+                            <Setter Property="IsEnabled"
+                                Value="False" />
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+            <Frame 
+                HorizontalOptions="Start" 
+                VerticalOptions="Start"
+                IsVisible="{Binding IsCountVisible}"
+                >
+                <views:CountView />
+            </Frame>
+        </Grid>
+    </ContentView.Content>
+</views:SizeAllocatedView>

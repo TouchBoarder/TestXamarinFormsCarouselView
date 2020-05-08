@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestCarouselViewScreenRotation.Views.CarouselTestView">
+  <ContentView.Content>
+        <Grid>
+            <CarouselView x:Name="CarouselView" 
+                          IndicatorView="indicatorView" 
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"
+                          VerticalScrollBarVisibility="Never"
+                          HorizontalScrollBarVisibility="Never"
+                          ItemsSource="{Binding Items}"
+                          ItemTemplate="{Binding TemplateSelector}"
+                          />
+            <IndicatorView x:Name="indicatorView"
+                           IsVisible="{Binding IndicatorIsVisible}"
+                           IndicatorColor="Gray"
+                           SelectedIndicatorColor="Accent"
+                           HorizontalOptions="Center"
+                           VerticalOptions="End"
+                           IndicatorSize="12"
+                           Margin="{d:OnPlatform iOS='16,16,16,36', Android='16'}"
+                           />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

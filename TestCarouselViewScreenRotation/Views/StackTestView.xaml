@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:SizeAllocatedView
+    xmlns:views="clr-namespace:TestCarouselViewScreenRotation.Views"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="TestCarouselViewScreenRotation.Views.StackTestView"             
+    BackgroundColor="{Binding Color}"
+    >
+    <ContentView.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Padding="0" Margin="0">
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+            <views:CountView />
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="Start" VerticalOptions="CenterAndExpand"/>
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <Frame WidthRequest="100" MinimumHeightRequest="100" HorizontalOptions="End" VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </ContentView.Content>
+</views:SizeAllocatedView>

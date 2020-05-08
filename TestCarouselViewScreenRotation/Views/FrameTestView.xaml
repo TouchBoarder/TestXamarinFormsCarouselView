@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:SizeAllocatedView
+    xmlns:views="clr-namespace:TestCarouselViewScreenRotation.Views"
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TestCarouselViewScreenRotation.Resources;assembly=TestCarouselViewScreenRotation"
+    mc:Ignorable="d"
+    x:Class="TestCarouselViewScreenRotation.Views.FrameTestView"             
+    BackgroundColor="{Binding Color}"
+    >
+    <ContentView.Content>
+        <Frame HorizontalOptions="Center"  Margin="16" VerticalOptions="Center" CornerRadius="10">
+            <StackLayout>
+                <Image Source="{local:ImageResource TestCarouselViewScreenRotation.Resources.icon.png}" />
+                <views:CountView />
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</views:SizeAllocatedView>

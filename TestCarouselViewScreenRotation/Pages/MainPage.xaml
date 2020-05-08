@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TestCarouselViewScreenRotation.MainPage"
+             Title="Test Rotating CarouselView"
+             Visual="Material"
+             >
+    <ScrollView>
+        <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="16">
+            <StackLayout BackgroundColor="White">
+        <Label Padding="8" TextColor="Black" FontSize="Medium" FontAttributes="Bold" Text="Select content type for carousel view, and test rotating screen." HorizontalTextAlignment="Center"></Label>
+            <Label  TextColor="Black" Text="Show On View Size Allocated count for:" HorizontalOptions="Center" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <StackLayout Padding="16,0,0,0">
+                    <RadioButton Text="None" IsChecked="true" GroupName="CountType" CheckedChanged="RadioButton_CheckedChanged" CommandParameter="None" />
+                    <RadioButton Text="All" GroupName="CountType" CheckedChanged="RadioButton_CheckedChanged" CommandParameter="All"/>
+                </StackLayout>
+                <StackLayout Padding="16,0,0,0">
+                    <RadioButton Text="Portrait" GroupName="CountType" CheckedChanged="RadioButton_CheckedChanged" CommandParameter="Portrait"/>
+                    <RadioButton Text="Landscape" GroupName="CountType" CheckedChanged="RadioButton_CheckedChanged" CommandParameter="Landscape"/>
+                </StackLayout>
+            </StackLayout>
+
+                <StackLayout>
+                    <Button 
+                        Text="FRAME, STACK, WEB, MEDIA ..."
+                        Clicked="Button_Clicked"
+                        CommandParameter="All"
+                        />
+                    <Button 
+                        Text="3 x FRAME"
+                        Clicked="Button_Clicked"
+                        CommandParameter="Frame"
+                        />
+                    <Button 
+                        Text="3 x STACK"
+                        Clicked="Button_Clicked"
+                        CommandParameter="Stack"
+                        />
+                    <Button 
+                        Text="3 x WEB"
+                        Clicked="Button_Clicked"
+                        CommandParameter="Web"
+                        />
+                    <Button 
+                        Text="3 x MEDIA"
+                        Clicked="Button_Clicked"
+                        CommandParameter="Media"
+                        />
+                </StackLayout>
+
+        </StackLayout>
+       
+    </Frame>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,36 @@
+## Bugs in screenshot gifs
+
+### 1_ios_video_on_rotation
+
+#### iOS CarouselView Rotation Bug: 
+Actual Behavior: New video starts to play on screen rotation and you can hear mulitiple playbacks.
+Expected Behavior: The same View/video should continue to play on screen rotation.
+Workaround: ? - 
+
+### 2_android_video_on_rotation.
+
+#### Android CarouselView Rotation Bug: 
+Actual Behavior: Height and width of video layout is wrong after screen rotation
+Expected Behavior: Update the layout correct on screen rotation..
+Workaround: Force update of layout height and width in View OnSizeAllocated
+
+
+### 3_ios_video_on_swipe
+
+#### iOS CarouselView/MediaElement Swipe Bug: 
+Actual Behavior: Video(s) continues to play on CarousleView swipe (and in the background after parent page is popped from stack.)
+Expected behavior: Video is paused when not visible.
+Workaround: Media state can be handled in code on current position changed event and when parent page is popped from stack. 
+
+### 4_android_video_on_swipe
+
+#### Android CarouselView Swipe Bug
+Actual Behavior: View/Video reloads on CarousleView swipe.
+Expected behavior: View/Video is not reloaded and video state is kept and paused when parent view is not visible in a CarouselView.
+Workaround: Media state can be handled in code on current position changed event.  
+Fix: Prevent reload of video on CarousleView swipe
+
+#### Android CarouselView WebView Scroll Bug
+Actual Behavior: Almost impossible to scroll vertically on WebView in a CarouselView.
+Expected behavior: iOS Scroll behavior for webview in a CarouselView.
+
